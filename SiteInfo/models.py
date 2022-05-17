@@ -2,10 +2,11 @@ from django.db import models
 
 class Reservation(models.Model):
     Nom = models.CharField(max_length=255)
-    Phone_number= models.CharField(max_length=255)
+    dial_code = models.CharField(max_length=4)
+    Phone_number= models.CharField(max_length=10)
     Email = models.EmailField(max_length=254)
     Jours = models.DateField()
-    Maps = models.URLField()
+    Maps = models.URLField(max_length=255)
     Person = models.IntegerField()
 
 class About(models.Model):
@@ -20,7 +21,6 @@ class Testimony(models.Model):
     Metier = models.CharField(max_length=255)
 
 class Network(models.Model):
-    Icon = models.ImageField()
     Nom = models.CharField(max_length=255)
     fb_link = models.URLField()
     insta_link = models.URLField()

@@ -7,7 +7,7 @@ class Banner(models.Model):
 class Plat(models.Model):
     Nom = models.CharField(max_length=255)
     Description = models.TextField(max_length=500)
-    Image = models.ImageField()
+    Image = models.FileField()
     Prix = models.CharField(max_length=255)
     Rprix = models.CharField(max_length=255)
     Boolean = models.BooleanField()
