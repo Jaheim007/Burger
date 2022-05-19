@@ -2,14 +2,13 @@ from django.contrib import admin
 from .models import * 
 from django.utils.safestring import mark_safe
 
-
 @admin.register(Banner)
-class about(admin.ModelAdmin):
+class About(admin.ModelAdmin):
     list_display = ('title', 'Description',)
 
 @admin.register(Plat)
 class Plat(admin.ModelAdmin):
-    list_display = ('Nom', 'Description', 'Prix', 'Rprix', 'views', 'Boolean')
+    list_display = ('views', 'Nom', 'Description', 'Prix', 'Rprix', 'Boolean')
 
     def views(self, obj):     
         return mark_safe(f'<img src="{obj.Image.url}" style = "height:100px; width:200px">')

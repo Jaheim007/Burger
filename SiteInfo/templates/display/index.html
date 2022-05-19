@@ -175,7 +175,7 @@
         </div>
         <div class="container">
           <ol class="carousel-indicators">
-            {% for item in banners %}
+              {% for item in banners %}
               {% if forloop.counter0 == 0 %}
                 <li data-target="#customCarousel1" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
               {% else %}
@@ -1178,7 +1178,7 @@
                 </p>
               </div>
               <div class="img-box">
-                <img src="{% static 'display/images/client1.jpg' %}" alt="" class="box-img">
+                <img src="{% static 'assets/images/client1.jpg' %}" alt="" class="box-img">
               </div>
             </div>
           </div>
