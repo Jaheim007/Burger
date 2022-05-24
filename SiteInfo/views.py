@@ -1,10 +1,15 @@
+from unicodedata import category
 from django.shortcuts import render
 from Services.models import *
+from .models import About, Site, Testimony
 
 def index(request):
-    ban = Banner.objects.filter().first
     banners= Banner.objects.all()
-
+    plats = Plat.objects.all()
+    about = About.objects.all()
+    site = Site.objects.all()
+    comments = Testimony.objects.all()
+    category = Categorie.objects.all()
     return render(request, 'display/index.html', locals())
 
 
