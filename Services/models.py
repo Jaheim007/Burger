@@ -3,6 +3,11 @@ from django.db import models
 class Banner(models.Model):
     title = models.CharField(max_length=255)
     Description = models.TextField(max_length=500)
+class Categorie(models.Model):
+    Name = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.Name
 
 class Plat(models.Model):
     Nom = models.CharField(max_length=255)
@@ -11,13 +16,12 @@ class Plat(models.Model):
     Prix = models.CharField(max_length=255)
     Rprix = models.CharField(max_length=255)
     Boolean = models.BooleanField()
-
-class Categorie(models.Model):
-    nom_de_categorie1 = models.CharField(max_length=255)
-    nom_de_categorie2 = models.CharField(max_length=255)
-    nom_de_categorie3 = models.CharField(max_length=255)
-    nom_de_categorie4 = models.CharField(max_length=255)
-
+    category = models.ForeignKey(Categorie , on_delete=models.SET_NULL, null=True)
+    
+    def __str__(self):
+        return self.Nom
+    
+    
 class OpenDay(models.Model):
     Jours = models.CharField(max_length=255)
     Dheure = models.TimeField(auto_now=False, auto_now_add=False)

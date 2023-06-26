@@ -351,21 +351,18 @@
         </h2>
       </div>
 
-      {% for items in category %}
       <ul class="filters_menu">
         <li class="active" data-filter="*">All</li>
-        <li data-filter=".burger">{{ items.nom_de_categorie1 }}</li>
-        <li data-filter=".pizza">{{ items.nom_de_categorie2 }}</li>
-        <li data-filter=".pasta">{{ items.nom_de_categorie3 }}</li>
-        <li data-filter=".fries">{{ items.nom_de_categorie4 }}</li>
+        {% for items in category %}
+        <li data-filter=".{{items.Name}}">{{items.Name}}</li>
+        {% endfor %}
       </ul>
-      {% endfor %}
       
       <div class="filters-content">  
       
         <div class="row grid">
         {% for item in plats %}
-          <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="col-sm-6 col-lg-4 all {{item.category.Name}}">
         
             <div class="box">
 
